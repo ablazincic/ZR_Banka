@@ -10,7 +10,7 @@
     <Window.Resources>
         <Style x:Key="ButtonHoverStyle" TargetType="Button">
             <Setter Property="Background" Value="White"/>
-            <Setter Property="BorderBrush" Value="#FFB58B06"/>
+            <Setter Property="BorderBrush" Value="#FFB58B05"/>
             <Setter Property="Foreground" Value="#000000"/>
             <Setter Property="Padding" Value="5"/>
             <Setter Property="Template">
