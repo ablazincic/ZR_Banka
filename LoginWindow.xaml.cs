@@ -21,24 +21,41 @@ namespace ZR_Banka;
 public partial class LoginWindow : Window
 {
 
-    private readonly ZrBankaDbContext context;
-
     public LoginWindow()
     {
         InitializeComponent();
-
-        context = App.ServiceProvider.GetService<ZrBankaDbContext>();
-
-
-
-
-    
-
-
+          
+       
     }
 
     private void btnLogin_Click(object sender, RoutedEventArgs e)
     {
+        var provjeraUsername = App.context.Korisnik.FirstOrDefault(x => x.Username.ToLower() == txtUsername.Text.ToLower());
+        var provjeraPassworda = App.context.Korisnik.FirstOrDefault(x => x.Password == txtPassword.Password);
+
+        if (provjeraPassworda != null && provjeraUsername != null)
+        {
+            MessageBox.Show("korisnik ima dobre podatke ");
+        }
+        else
+        {
+            lblWarning.Content = "Nešto ne valja! Provjerite lozinku ili username.";
+        }
 
     }
+
+    private void btnRegistracija_Click(object sender, RoutedEventArgs e)
+    {
+        RegistrationWindow regWindow = new RegistrationWindow();
+
+        this.Hide();
+        regWindow.Show(); // prebacivanje na okvir za registraciju
+        
+    }
+
+    private void Exit_program(object sender, EventArgs e)
+    {
+        Environment.Exit(0); //exitanje aplikacije putem X gumba
+    }
+
 }

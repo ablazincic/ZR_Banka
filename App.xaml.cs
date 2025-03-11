@@ -15,6 +15,8 @@ public partial class App : Application
 {
     public static IServiceProvider ServiceProvider { get; private set; }
 
+    public static ZrBankaDbContext context;
+
     protected override void OnStartup(StartupEventArgs e)
     {
         var services = new ServiceCollection();
@@ -25,6 +27,8 @@ public partial class App : Application
 
         ServiceProvider = services.BuildServiceProvider();
         base.OnStartup(e);
+
+        context = App.ServiceProvider.GetService<ZrBankaDbContext>(); // service za spajanje sa bazom 
     }
 }
 

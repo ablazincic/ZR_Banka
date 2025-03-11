@@ -20,4 +20,14 @@ public partial class Korisnik
     public string Uloga { get; set; } = null!;
 
     public virtual ICollection<Kredit> Kredit { get; set; } = new List<Kredit>();
+
+    public Korisnik(string ime, string prezime, string username,string password, string mail,string uloga)
+    {
+        Ime = ime;
+        Prezime = prezime;
+        Username = username;
+        Password = password;
+        Mail = mail;
+        Uloga = uloga;
+    }
 }
