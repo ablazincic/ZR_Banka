@@ -1,0 +1,39 @@
+﻿<Window x:Class="ZR_Banka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZR_Banka"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="912" Closed="Exit_program" Icon="/resources/images/logo.png" ScrollViewer.VerticalScrollBarVisibility="Disabled" ResizeMode="CanMinimize">
+    <Grid>
+        <!-- Sidebar -->
+        <Grid Background="#222222" Width="200" HorizontalAlignment="Left">
+            <DockPanel LastChildFill="True">
+                <!-- Logo na vrhu -->
+                <Image Source="/resources/images/logo.png" Height="142" Margin="10" DockPanel.Dock="Top" Width="210"/>
+
+                <!-- Prostor između loga i gumba -->
+                <StackPanel Height="50"/>
+
+                <!-- Gumbi na sredini -->
+                <StackPanel DockPanel.Dock="Top" Margin="10,5,10,10">
+                    <Button Content="Home" Style="{StaticResource SidebarButton}" Click="Home_Click" Margin="10"/>
+                    <Button Content="Transactions" Style="{StaticResource SidebarButton}" Click="Transakcije_Click" Margin="10"/>
+                    <Button Content="Settings" Style="{StaticResource SidebarButton}" Click="Postavke_Click" Margin="10"/>
+                </StackPanel>
+
+                <!-- Logout gumb na dnu -->
+                <Button Content="Logout" Style="{StaticResource SidebarButton}" Click="Button_Click"
+                Margin="10" VerticalAlignment="Bottom"/>
+            </DockPanel>
+        </Grid>
+
+
+
+
+
+        <!-- Glavni sadržaj -->
+        <Frame x:Name="MainFrame" Margin="200,0,0,0" NavigationUIVisibility="Hidden" Foreground="White" Background="#FF1A1A1A"/>
+    </Grid>
+</Window>

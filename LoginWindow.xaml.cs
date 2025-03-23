@@ -35,11 +35,25 @@ public partial class LoginWindow : Window
 
         if (provjeraPassworda != null && provjeraUsername != null)
         {
-            MessageBox.Show("korisnik ima dobre podatke ");
+            lblWarning.Content = " ";
+            App.uloga = provjeraPassworda.Uloga;
+
+            MainWindow main = new MainWindow();
+            this.Hide();
+            main.Show();
+        }
+        else if (provjeraPassworda != null && provjeraUsername == null)
+        {
+            lblWarning.Content = "Pogrešno korisničko ime!";
+        }
+        else if(provjeraPassworda == null && provjeraUsername != null)
+        {
+            lblWarning.Content = "Pogrešna lozinka!";
+
         }
         else
         {
-            lblWarning.Content = "Nešto ne valja! Provjerite lozinku ili username.";
+            lblWarning.Content = "Pogrešna lozinka i korisničko ime!";
         }
 
     }

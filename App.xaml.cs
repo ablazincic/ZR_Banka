@@ -17,6 +17,8 @@ public partial class App : Application
 
     public static ZrBankaDbContext context;
 
+    public static string uloga { get; set; }
+
     protected override void OnStartup(StartupEventArgs e)
     {
         var services = new ServiceCollection();
@@ -29,6 +31,9 @@ public partial class App : Application
         base.OnStartup(e);
 
         context = App.ServiceProvider.GetService<ZrBankaDbContext>(); // service za spajanje sa bazom 
+    
+    
     }
+
 }
 

@@ -58,4 +58,45 @@
         <Setter Property="FontFamily" Value="Microsoft YaHei UI"/>
     </Style>
 
+    <!-- Stil za SidebarButton -->
+    <Style x:Key="SidebarButton" TargetType="Button">
+        <!-- Osnovne postavke -->
+        <Setter Property="Background" Value="#B6862A"/>
+        <Setter Property="Foreground" Value="#FFF"/>
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Margin" Value="0,20,0,60"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Height" Value="40px"/>
+        <Setter Property="Width" Value="160" />
+        <!-- Kontrola predloška gumba -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!-- Hover efekt (lagana promjena boje) -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#D1A84D"/>
+                        </Trigger>
+                        <!-- Efekt pri pritisku -->
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#FFDADADA"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
 </ResourceDictionary>

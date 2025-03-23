@@ -50,9 +50,13 @@ namespace ZR_Banka
                 Window_Closed(1,e);
                
             }
-            else
+            else if(inputMail == null && !(txtMail.Text.Contains("@")) && txtPassword.Password.Any(char.IsDigit))
             {
-                lblWarning.Content = "Neuspješna prijava! Provjerite e-mail adresu(sadrži li @) i ima li vaša lozinka brojke.";
+                lblWarning.Content = "Neuspješna registracija, vaša e-mail adresa ne sadrži @!";
+            }
+            else if(inputMail == null && txtMail.Text.Contains("@") && !(txtPassword.Password.Any(char.IsDigit)))
+            {
+                lblWarning.Content = "Neuspješna registracija, vaša zaporka ne sadrži brojke!";
             }
 
         }

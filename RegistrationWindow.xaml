@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZR_Banka"
         mc:Ignorable="d"
-        Title="RegistrationWindow" Height="780" Width="600" Icon="resources/images/logo.png" Closed="Window_Closed">
-    <Grid x:Name="gridReg">
+        Title="RegistrationWindow" Height="780" Width="600" Icon="resources/images/logo.png" Closed="Window_Closed" ResizeMode="CanMinimize">
+    <Grid x:Name="gridReg" Background="#FF222222">
         <Image x:Name="imgLogo" HorizontalAlignment="Center" Height="250" Margin="0,-12,0,546" Width="250">
             <Image.Source>
                 <BitmapImage UriSource="pack://application:,,,/resources/images/logo.png"/>
@@ -17,14 +17,14 @@
 
         <Label Content="Registracija" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" FontSize="32" Foreground="#FFB58B06" FontFamily="Microsoft YaHei UI"/>
         <TextBox x:Name="txtIme" HorizontalAlignment="Center" Margin="0,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="25" FontFamily="Microsoft YaHei UI"/>
-        <Label Style="{StaticResource LabelStyle}" Content="Ime" HorizontalAlignment="Left" Margin="205,279,0,0" VerticalAlignment="Top" Foreground="#FFB58B06" FontFamily="Microsoft YaHei UI" FontSize="16"/>
-        <Label Style="{StaticResource LabelStyle}" Content="Prezime" HorizontalAlignment="Left" Margin="205,343,0,0" VerticalAlignment="Top" Foreground="#FFB58B06" FontFamily="Microsoft YaHei UI" FontSize="16"/>
+        <Label Style="{StaticResource LabelStyle}" Content="Ime" HorizontalAlignment="Left" Margin="205,279,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Microsoft YaHei UI" FontSize="16"/>
+        <Label Style="{StaticResource LabelStyle}" Content="Prezime" HorizontalAlignment="Left" Margin="205,343,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Microsoft YaHei UI" FontSize="16"/>
         <TextBox x:Name="txtPrezime" HorizontalAlignment="Center" Margin="0,373,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="25"/>
-        <Label Style="{StaticResource LabelStyle}" Content="Korisničko ime" HorizontalAlignment="Left" Margin="205,410,0,0" VerticalAlignment="Top" Foreground="#FFB58B06" FontFamily="Microsoft YaHei UI" FontSize="16"/>
+        <Label Style="{StaticResource LabelStyle}" Content="Korisničko ime" HorizontalAlignment="Left" Margin="205,410,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Microsoft YaHei UI" FontSize="16"/>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Center" Margin="0,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="25"/>
-        <Label Style="{StaticResource LabelStyle}" Content="Zaporka" HorizontalAlignment="Left" Margin="205,489,0,0" VerticalAlignment="Top" Foreground="#FFB58B06" FontFamily="Microsoft YaHei UI" FontSize="16"/>
+        <Label Style="{StaticResource LabelStyle}" Content="Zaporka" HorizontalAlignment="Left" Margin="205,489,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Microsoft YaHei UI" FontSize="16"/>
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Center" Margin="0,516,0,0" VerticalAlignment="Top" Width="170" Height="25"/>
-        <Label x:Name="lblMail" Style="{StaticResource LabelStyle}" Content="E-mail" HorizontalAlignment="Left" Margin="205,567,0,0" VerticalAlignment="Top" Foreground="#FFB58B06" FontFamily="Microsoft YaHei UI" FontSize="16"/>
+        <Label x:Name="lblMail" Style="{StaticResource LabelStyle}" Content="E-mail" HorizontalAlignment="Left" Margin="205,567,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Microsoft YaHei UI" FontSize="16"/>
         <TextBox x:Name="txtMail" HorizontalAlignment="Center" Margin="0,593,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="25"/>
         <Button Style="{StaticResource btnStillizacija1}" x:Name="btnKreiraj" Content="Izradi račun" HorizontalAlignment="Center" Margin="0,649,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="14" Width="104" Height="30" Click="btnKreiraj_Click"/>
         <Label x:Name="lblWarning" Content="" HorizontalAlignment="Center" Margin="0,702,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontWeight="Bold" Foreground="#FFF50000"/>
