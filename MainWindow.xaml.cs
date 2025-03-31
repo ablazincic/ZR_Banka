@@ -46,8 +46,12 @@ namespace ZR_Banka
             MainFrame.Navigate(new PostavkePage());
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
+            LoginWindow loginWin = new LoginWindow();
+
+            this.Hide();
+            loginWin.Show();
 
         }
     }

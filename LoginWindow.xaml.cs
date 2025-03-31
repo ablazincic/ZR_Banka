@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ZR_Banka.Models;
 using System.Diagnostics;
+using System.Windows.Media.Animation;
 
 namespace ZR_Banka;
 
@@ -36,25 +37,24 @@ public partial class LoginWindow : Window
         if (provjeraPassworda != null && provjeraUsername != null)
         {
             lblWarning.Content = " ";
-            App.uloga = provjeraPassworda.Uloga;
-
+            App.loggedUser = App.context.Korisnik.FirstOrDefault(x => x.Username == txtUsername.Text) as Korisnik;
+      
             MainWindow main = new MainWindow();
             this.Hide();
             main.Show();
         }
-        else if (provjeraPassworda != null && provjeraUsername == null)
+        else if(provjeraPassworda == null || provjeraUsername == null)
         {
-            lblWarning.Content = "Pogrešno korisničko ime!";
-        }
-        else if(provjeraPassworda == null && provjeraUsername != null)
-        {
-            lblWarning.Content = "Pogrešna lozinka!";
+            
+            this.RegisterName("lblWarning", lblWarning);
+            this.RegisterName("WarningTransform", lblWarning.RenderTransform);
+            lblWarning.Content = "Neuspješna prijava, provjerite username ili zaporku!";
+       
+            Storyboard sb = (Storyboard)FindResource("ShakeAnimation");
+            sb.Begin(this);
 
         }
-        else
-        {
-            lblWarning.Content = "Pogrešna lozinka i korisničko ime!";
-        }
+
 
     }
 
@@ -63,13 +63,13 @@ public partial class LoginWindow : Window
         RegistrationWindow regWindow = new RegistrationWindow();
 
         this.Hide();
-        regWindow.Show(); // prebacivanje na okvir za registraciju
+        regWindow.Show(); 
         
     }
 
     private void Exit_program(object sender, EventArgs e)
     {
-        Environment.Exit(0); //exitanje aplikacije putem X gumba
+        Environment.Exit(0);
     }
 
 }

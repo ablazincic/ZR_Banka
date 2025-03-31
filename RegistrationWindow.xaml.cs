@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ZR_Banka.Models;
@@ -50,14 +51,21 @@ namespace ZR_Banka
                 Window_Closed(1,e);
                
             }
-            else if(inputMail == null && !(txtMail.Text.Contains("@")) && txtPassword.Password.Any(char.IsDigit))
+            else if(inputMail == null && !(txtMail.Text.Contains("@")) || !(txtPassword.Password.Any(char.IsDigit)))
             {
-                lblWarning.Content = "Neuspješna registracija, vaša e-mail adresa ne sadrži @!";
+
+                
+                this.RegisterName("lblWarning", lblWarning);
+                this.RegisterName("WarningTransform", lblWarning.RenderTransform);
+                lblWarning.Content = "Neuspješna registracija, provjerite e-mail ili lozinku!";
+
+               
+                Storyboard sb = (Storyboard)FindResource("ShakeAnimation");
+                sb.Begin(this);
+
+               
             }
-            else if(inputMail == null && txtMail.Text.Contains("@") && !(txtPassword.Password.Any(char.IsDigit)))
-            {
-                lblWarning.Content = "Neuspješna registracija, vaša zaporka ne sadrži brojke!";
-            }
+         
 
         }
     }

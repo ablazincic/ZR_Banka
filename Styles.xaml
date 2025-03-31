@@ -98,5 +98,12 @@
         </Setter>
     </Style>
 
+    <Storyboard x:Key="ShakeAnimation">
+        <DoubleAnimation Storyboard.TargetName="lblWarning"
+                         Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"
+                         From="0" To="10"
+                         Duration="0:0:0.05" AutoReverse="True"
+                         RepeatBehavior="5x"/>
+    </Storyboard>
 
 </ResourceDictionary>

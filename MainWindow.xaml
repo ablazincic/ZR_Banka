@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZR_Banka"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="912" Closed="Exit_program" Icon="/resources/images/logo.png" ScrollViewer.VerticalScrollBarVisibility="Disabled" ResizeMode="CanMinimize">
+        Title="MainWindow" Height="500" Width="1100" Closed="Exit_program" Icon="/resources/images/logo.png" ScrollViewer.VerticalScrollBarVisibility="Disabled" ResizeMode="CanMinimize">
     <Grid>
         <!-- Sidebar -->
         <Grid Background="#222222" Width="200" HorizontalAlignment="Left">
@@ -24,7 +24,7 @@
                 </StackPanel>
 
                 <!-- Logout gumb na dnu -->
-                <Button Content="Logout" Style="{StaticResource SidebarButton}" Click="Button_Click"
+                <Button x:Name="btnLogout" Content="Logout" Style="{StaticResource SidebarButton}" Click="btnLogout_Click"
                 Margin="10" VerticalAlignment="Bottom"/>
             </DockPanel>
         </Grid>

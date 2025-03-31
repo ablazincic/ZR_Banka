@@ -17,7 +17,10 @@ public partial class App : Application
 
     public static ZrBankaDbContext context;
 
-    public static string uloga { get; set; }
+    public static Korisnik loggedUser;
+
+    
+    
 
     protected override void OnStartup(StartupEventArgs e)
     {
