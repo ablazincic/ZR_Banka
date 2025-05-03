@@ -21,5 +21,9 @@ public partial class Kredit
 
     public bool StatusKredita { get; set; }
 
+    public decimal UkupanIznos { get; set; }
+
     public virtual Korisnik? IdKorisnikNavigation { get; set; }
+
+   
 }

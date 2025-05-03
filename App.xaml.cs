@@ -28,7 +28,7 @@ public partial class App : Application
 
         // Registracija DbContext-a s konekcijskim stringom
         services.AddDbContext<ZrBankaDbContext>(options =>
-            options.UseNpgsql("Host=localhost;Database=ZR_BankaDB;Username=postgres;Password=admin"));
+            options.UseNpgsql("Host=ep-cold-base-a2b821hv-pooler.eu-central-1.aws.neon.tech;Database=neondb;Username=neondb_owner;Password=npg_cnyeDGL4o3Cq"));
 
         ServiceProvider = services.BuildServiceProvider();
         base.OnStartup(e);

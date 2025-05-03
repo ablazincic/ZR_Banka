@@ -8,7 +8,106 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TransakcijePage">
 
-    <Grid Background="#1A1A1A">
-       
+    <Grid Background="#1A1A1A" Width="800">
+
+        <ListBox x:Name="listKrediti"
+         ItemsSource="{Binding Krediti}"
+         d:ItemsSource="{d:SampleData ItemCount=5}"
+         Margin="20,73,279,123"
+         Background="#FFC5C5C5"
+         Foreground="Black"
+         BorderThickness="1">
+
+            <!-- ControlTemplate s fiksiranim zaglavljem -->
+            <ListBox.Template>
+                <ControlTemplate TargetType="ListBox">
+                    <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                        <DockPanel>
+                            <!-- HEADER: fiksiran na vrhu -->
+                            <Grid DockPanel.Dock="Top"
+                          Background="#FFB0B0B0"
+                          Margin="4">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120"/>
+                                    <!-- Datum -->
+                                    <ColumnDefinition Width="120"/>
+                                    <!-- Vrsta -->
+                                    <ColumnDefinition Width="120"/>
+                                    <!-- Ukupan iznos -->
+                                    <ColumnDefinition Width="120"/>
+                                    <!-- Preostali dug -->
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0"
+                                   Text="Datum pozajmice"
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="1"
+                                   Text="Vrsta kredita"
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="2"
+                                   Text="Ukupan iznos (€)"
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right"/>
+                                <TextBlock Grid.Column="3"
+                                   Text="Preostali dug (€)"
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Right"/>
+                            </Grid>
+
+                            <!-- Stavke ispod headera sa zasebnim scrollom -->
+                            <ScrollViewer Focusable="false">
+                                <ItemsPresenter/>
+                            </ScrollViewer>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </ListBox.Template>
+
+            <!-- ItemTemplate: isti raspored stupaca kao u headeru -->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="4,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="120"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"
+                           Text="{Binding DatumPozajmice, StringFormat={}{0:dd.MM.yyyy}}"
+                           VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="1"
+                           Text="{Binding VrstaKredita}"
+                           VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="2"
+                           Text="{Binding UkupanIznos, StringFormat={}{0:N2} €}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"/>
+                        <TextBlock Grid.Column="3"
+                           Text="{Binding PreostaliDug, StringFormat={}{0:N2} €}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+
+
+
+
+        <Label Content="Aktivni krediti" HorizontalAlignment="Left" Margin="220,30,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="18" Foreground="White" FontWeight="Bold"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="369,24,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="18" Foreground="White" FontWeight="Bold"/>
+        <CheckBox x:Name="checkNeaktivni" Content="Uključi otplaćene kredite" HorizontalAlignment="Left" Margin="586,183,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" Foreground="White"/>
+        <Button x:Name="btnPlacanje" Style="{StaticResource btnStillizacija1}" Content="Plaćanje" HorizontalAlignment="Left" Margin="250,347,0,0" VerticalAlignment="Top" Width="76" Height="26" FontFamily="Microsoft YaHei UI" FontSize="14" Click="btnPlacanje_Click"/>
+        <Label Content="Export kredita u .CSV" HorizontalAlignment="Left" Margin="571,150,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="18" Foreground="White" FontWeight="Bold"/>
+        <Button x:Name="btnExport" Style="{StaticResource btnStillizacija1}" Content="Export" HorizontalAlignment="Left" Margin="637,0,0,0" VerticalAlignment="Center" FontSize="14" Width="75" Height="26" FontFamily="Microsoft YaHei UI"/>
+        <Label Content="(označi kredit sa liste)" HorizontalAlignment="Left" Margin="233,378,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="10" Foreground="White" FontStyle="Italic"/>
+
     </Grid>
 </Page>

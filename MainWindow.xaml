@@ -18,13 +18,13 @@
 
                 <!-- Gumbi na sredini -->
                 <StackPanel DockPanel.Dock="Top" Margin="10,5,10,10">
-                    <Button Content="Home" Style="{StaticResource SidebarButton}" Click="Home_Click" Margin="10"/>
-                    <Button Content="Transactions" Style="{StaticResource SidebarButton}" Click="Transakcije_Click" Margin="10"/>
-                    <Button Content="Settings" Style="{StaticResource SidebarButton}" Click="Postavke_Click" Margin="10"/>
+                    <Button Content="Početna" Style="{StaticResource SidebarButton}" Click="Home_Click" Margin="10"/>
+                    <Button Content="Transakcije" Style="{StaticResource SidebarButton}" Click="Transakcije_Click" Margin="10"/>
+                    <Button Content="Postavke" Style="{StaticResource SidebarButton}" Click="Postavke_Click" Margin="10"/>
                 </StackPanel>
 
                 <!-- Logout gumb na dnu -->
-                <Button x:Name="btnLogout" Content="Logout" Style="{StaticResource SidebarButton}" Click="btnLogout_Click"
+                <Button x:Name="btnLogout" Content="Odjava" Style="{StaticResource SidebarButton}" Click="btnLogout_Click"
                 Margin="10" VerticalAlignment="Bottom"/>
             </DockPanel>
         </Grid>

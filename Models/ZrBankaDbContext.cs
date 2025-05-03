@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace ZR_Banka.Models;
 
 public partial class ZrBankaDbContext : DbContext
@@ -21,9 +22,11 @@ public partial class ZrBankaDbContext : DbContext
 
     public virtual DbSet<Uplata> Uplata { get; set; }
 
+    public virtual DbSet<Zahtjev> Zahtjev { get; set; } 
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Host=localhost;Database=ZR_BankaDB;Username=postgres;Password=admin");
+        => optionsBuilder.UseNpgsql("Host=ep-cold-base-a2b821hv-pooler.eu-central-1.aws.neon.tech;Database=neondb;Username=neondb_owner;Password=npg_cnyeDGL4o3Cq");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
