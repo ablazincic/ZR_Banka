@@ -103,11 +103,16 @@
 
         <Label Content="Aktivni krediti" HorizontalAlignment="Left" Margin="220,30,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="18" Foreground="White" FontWeight="Bold"/>
         <Label Content="" HorizontalAlignment="Left" Margin="369,24,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="18" Foreground="White" FontWeight="Bold"/>
-        <CheckBox x:Name="checkNeaktivni" Content="Uključi otplaćene kredite" HorizontalAlignment="Left" Margin="586,183,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" Foreground="White"/>
         <Button x:Name="btnPlacanje" Style="{StaticResource btnStillizacija1}" Content="Plaćanje" HorizontalAlignment="Left" Margin="250,347,0,0" VerticalAlignment="Top" Width="76" Height="26" FontFamily="Microsoft YaHei UI" FontSize="14" Click="btnPlacanje_Click"/>
-        <Label Content="Export kredita u .CSV" HorizontalAlignment="Left" Margin="571,150,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="18" Foreground="White" FontWeight="Bold"/>
-        <Button x:Name="btnExport" Style="{StaticResource btnStillizacija1}" Content="Export" HorizontalAlignment="Left" Margin="637,0,0,0" VerticalAlignment="Center" FontSize="14" Width="75" Height="26" FontFamily="Microsoft YaHei UI"/>
+        <Label Content="Prikaži otplatni plan kredita" HorizontalAlignment="Left" Margin="535,150,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="18" Foreground="White" FontWeight="Bold"/>
+        <Button x:Name="btnExport" Style="{StaticResource btnStillizacija1}" Content="Export" HorizontalAlignment="Left" Margin="636,188,0,0" VerticalAlignment="Top" FontSize="14" Width="76" Height="26" FontFamily="Microsoft YaHei UI" Click="btnExport_Click"/>
         <Label Content="(označi kredit sa liste)" HorizontalAlignment="Left" Margin="233,378,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="10" Foreground="White" FontStyle="Italic"/>
+        <Label Content="Želite dogovoriti novi kredit?" HorizontalAlignment="Left" Margin="545,245,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="16" Foreground="White" FontWeight="Bold"/>
+        <Button x:Name="btnZahtjev" Style="{StaticResource btnStillizacija1}" Content="Pošalji zahtjev" HorizontalAlignment="Left" Margin="624,279,0,0" VerticalAlignment="Top" Height="30" Width="100" FontFamily="Microsoft YaHei UI" FontSize="12.5" Click="btnZahtjev_Click"/>
+        <Label Content="(označi kredit sa liste)" HorizontalAlignment="Left" Margin="617,0,0,0" VerticalAlignment="Center" FontFamily="Microsoft YaHei UI" FontSize="10" Foreground="White" FontStyle="Italic"/>
+        <Ellipse HorizontalAlignment="Left" Height="1" Margin="558,239,0,0" Stroke="White" VerticalAlignment="Top" Width="232"/>
+        <Ellipse HorizontalAlignment="Left" Height="0" Margin="551,144,0,0" Stroke="White" VerticalAlignment="Top" Width="232"/>
+        <Ellipse HorizontalAlignment="Left" Height="1" Margin="558,149,0,0" Stroke="White" VerticalAlignment="Top" Width="232"/>
 
     </Grid>
 </Page>
