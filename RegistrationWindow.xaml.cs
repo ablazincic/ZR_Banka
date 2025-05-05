@@ -43,7 +43,7 @@ namespace ZR_Banka
      
             if (inputMail == null && txtMail.Text.Contains("@") && txtPassword.Password.Any(char.IsDigit))
             {
-                Korisnik korisnik = new Korisnik(txtIme.Text, txtPrezime.Text, txtUsername.Text, txtPassword.Password, txtMail.Text, "klijent");
+                Korisnik korisnik = new Korisnik(txtIme.Text, txtPrezime.Text, txtUsername.Text, txtPassword.Password, txtMail.Text, "korisnik");
                 App.context.Add(korisnik);
                 App.context.SaveChanges();
                 lblWarning.Content = "";

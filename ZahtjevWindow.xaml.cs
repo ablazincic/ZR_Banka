@@ -32,9 +32,11 @@ namespace ZR_Banka
                 Zahtjev zahtjev = new Zahtjev();
                 zahtjev.vrsta_kredita = txtVrsta.Text;
                 zahtjev.iznos = decimal.Parse(txtGlavnica.Text);
-                zahtjev.datum_zahtjeva = DateTime.Now;
-                zahtjev.id_korisnik = App.loggedUser.IdKorisnik;
+                zahtjev.datum_zahtjeva = DateTime.UtcNow;
+                zahtjev.IdKorisnik = App.loggedUser.IdKorisnik;
+                zahtjev.vrijeme_otplate = int.Parse(txtObrok.Text);
                 
+
                 App.context.Add(zahtjev);
                 App.context.SaveChanges();
                 MessageBox.Show("Predali ste zahtjev za kredit!");

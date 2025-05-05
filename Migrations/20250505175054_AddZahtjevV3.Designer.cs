@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ZR_Banka.Models;
@@ -11,9 +12,11 @@ using ZR_Banka.Models;
 namespace ZR_Banka.Migrations
 {
     [DbContext(typeof(ZrBankaDbContext))]
-    partial class ZrBankaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250505175054_AddZahtjevV3")]
+    partial class AddZahtjevV3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

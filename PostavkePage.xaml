@@ -8,7 +8,18 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PostavkePage">
 
-    <Grid Background="#1A1A1A">
-        
+    <Grid Background="#1A1A1A" Height="450" Width="800">
+        <Label Content="Postavke i administracija" HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="30" Foreground="White" FontWeight="Bold"/>
+        <Ellipse HorizontalAlignment="Center" Height="1" Margin="0,90,0,0" Stroke="White" VerticalAlignment="Top" Width="780"/>
+        <Label Content="Promjena lozinke" HorizontalAlignment="Left" Margin="37,107,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="20" Foreground="White" FontWeight="Bold"/>
+        <Label Content="Trenutna lozinka" HorizontalAlignment="Left" Margin="60,164,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="14" Foreground="White" FontWeight="Bold"/>
+        <Label x:Name="nebitniLABEL" Content="Nova lozinka:" HorizontalAlignment="Left" Margin="60,258,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="14" Foreground="White" FontWeight="Bold"/>
+        <Button Style="{StaticResource btnStillizacija1}" x:Name="btnPromijeni" Content="Promijeni" HorizontalAlignment="Left" Margin="88,332,0,0" VerticalAlignment="Top" Width="82" Height="23" FontFamily="Microsoft YaHei UI" Click="btnPromijeni_Click"/>
+        <Ellipse HorizontalAlignment="Left" Height="347" Margin="258,93,0,0" Stroke="White" VerticalAlignment="Top" Width="2"/>
+        <Label Content="Administracija i upravljanje bankom" HorizontalAlignment="Left" Margin="348,107,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="20" Foreground="White" FontWeight="Bold"/>
+        <Button x:Name="btnAdministrator" Style="{StaticResource btnStillizacija1}" Content="Administrator" HorizontalAlignment="Left" Margin="455,190,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="18" Width="159" Height="35" Click="btnAdministrator_Click"/>
+        <Button x:Name="btnBankar" Style="{StaticResource btnStillizacija1}" Content="Bankar" HorizontalAlignment="Left" Margin="456,280,0,0" VerticalAlignment="Top"  Width="158" Height="35" FontSize="18" FontFamily="Microsoft YaHei UI"/>
+        <PasswordBox x:Name="txtNewPassword" HorizontalAlignment="Left" Margin="65,291,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
+        <PasswordBox x:Name="txtCurrentPassword" HorizontalAlignment="Left" Margin="65,197,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
     </Grid>
 </Page>

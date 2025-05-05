@@ -88,7 +88,7 @@ namespace ZR_Banka
 
             preostaliDug = App.context.Uplata
                .Where(u => u.IdKredit == selectedObject.IdKredit)
-               .OrderByDescending(u => u.DatumUplate)
+               .OrderByDescending(u => u.IdUplate)
                .Select(u => (decimal?)u.PreostaliDug)
                .FirstOrDefault() ?? selectedKredit.UkupanIznos; // ako nema uplate, vrati cijeli iznos
 

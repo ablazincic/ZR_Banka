@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ZR_Banka.Models;
@@ -11,9 +12,11 @@ using ZR_Banka.Models;
 namespace ZR_Banka.Migrations
 {
     [DbContext(typeof(ZrBankaDbContext))]
-    partial class ZrBankaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250505174404_AddZahtjev")]
+    partial class AddZahtjev
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -161,8 +164,7 @@ namespace ZR_Banka.Migrations
                 {
                     b.Property<int>("IdZahtjev")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id_zahtjev");
+                        .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdZahtjev"));
 
@@ -182,8 +184,8 @@ namespace ZR_Banka.Migrations
                         .HasColumnType("boolean")
                         .HasColumnName("status_zahtjeva");
 
-                    b.Property<int>("vrijeme_otplate")
-                        .HasColumnType("integer")
+                    b.Property<DateTime>("vrijeme_otplate")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("vrijeme_otplate");
 
                     b.Property<string>("vrsta_kredita")
@@ -194,7 +196,7 @@ namespace ZR_Banka.Migrations
                     b.HasKey("IdZahtjev")
                         .HasName("Zahtjev_pkey");
 
-                    b.ToTable("Zahtjev", (string)null);
+                    b.ToTable("Zahtjev");
                 });
 
             modelBuilder.Entity("ZR_Banka.Models.Kredit", b =>

@@ -85,6 +85,8 @@ public partial class ZrBankaDbContext : DbContext
         {
             entity.HasKey(e => e.IdUplate).HasName("Uplata_pkey");
 
+
+
             entity.Property(e => e.IdUplate).HasColumnName("id_uplate");
             entity.Property(e => e.DatumUplate).HasColumnName("datum_uplate");
             entity.Property(e => e.IdKredit).HasColumnName("id_kredit");
@@ -94,7 +96,27 @@ public partial class ZrBankaDbContext : DbContext
             entity.Property(e => e.Uplata_novac)
                 .HasPrecision(6, 2)
                 .HasColumnName("uplata");
+
+           
+
         });
+
+        modelBuilder.Entity<Zahtjev>(entity =>
+           {
+               entity.HasKey(z => z.IdZahtjev).HasName("Zahtjev_pkey");
+
+               entity.ToTable("Zahtjev");
+
+               entity.Property(e => e.IdZahtjev).HasColumnName("id_zahtjev");
+               entity.Property(e=> e.IdKorisnik).HasColumnName("id_korisnik");
+               entity.Property(e=> e.vrsta_kredita).HasColumnName("vrsta_kredita");
+               entity.Property(e => e.iznos).HasColumnName("iznos");    
+               entity.Property(e=>e.datum_zahtjeva).HasColumnName("datum_zahtjeva");    
+               entity.Property(e=> e.vrijeme_otplate).HasColumnName("vrijeme_otplate");
+               entity.Property(e => e.status_zahtjeva).HasColumnName("status_zahtjeva");
+
+           });
+           
 
         OnModelCreatingPartial(modelBuilder);
     }

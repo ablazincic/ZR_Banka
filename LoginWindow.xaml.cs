@@ -38,6 +38,7 @@ public partial class LoginWindow : Window
         {
             lblWarning.Content = " ";
             App.loggedUser = App.context.Korisnik.FirstOrDefault(x => x.Username == txtUsername.Text) as Korisnik;
+            
       
             MainWindow main = new MainWindow();
             this.Hide();

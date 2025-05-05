@@ -27,15 +27,17 @@ namespace ZR_Banka
             InitializeComponent();
             transakcijePage = transakcije;
             lblKredit.Content += TransakcijePage.selectedKredit.IdKredit.ToString();
+            lblDatum.Content += DateTime.Now.ToString("dd/MM/yyyy") + ")";
         }
 
         private void btnPotvrda_Click(object sender, RoutedEventArgs e)
         {
+           
             Uplata uplata = new Uplata();
 
             uplata.IdKredit = TransakcijePage.selectedKredit.IdKredit;
             uplata.Uplata_novac = decimal.Parse(txtIznos.Text);
-            uplata.DatumUplate = DateOnly.FromDateTime(datePickerDatum.SelectedDate.Value);
+            uplata.DatumUplate = DateOnly.FromDateTime(DateTime.Now);
 
             if (uplata.Uplata_novac > TransakcijePage.preostaliDug)
             {

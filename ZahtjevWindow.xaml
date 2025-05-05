@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZR_Banka"
         mc:Ignorable="d"
-        Title="ZahtjevWindow" Height="600" Width="400">
+        Title="ZahtjevWindow" Height="530" Width="400">
     <Grid Background="#1A1A1A">
-        <Label Content="Zahtjev za kredit" HorizontalAlignment="Center" Margin="0,52,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="30" Foreground="White" FontWeight="Bold"/>
-        <TextBox x:Name="txtVrsta" HorizontalAlignment="Center" Margin="0,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="25" FontFamily="Microsoft YaHei"/>
-        <Label Content="Navedite vrstu kredita" HorizontalAlignment="Center" Margin="0,197,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" Foreground="White" FontWeight="Bold" FontSize="18"/>
-        <Label Content="Unesite glavnicu" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" Foreground="White" FontWeight="Bold" FontSize="18" Margin="0,307,0,0"/>
-        <TextBox x:Name="txtGlavnica" HorizontalAlignment="Center" Margin="0,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="25" FontFamily="Microsoft YaHei UI"/>
-        <Button x:Name="btnPredaj"  Style="{StaticResource btnStillizacija1}" Content="Pošalji " HorizontalAlignment="Center" Margin="0,428,0,0" VerticalAlignment="Top" Height="32" Width="104" FontFamily="Microsoft YaHei UI" FontSize="18" Click="btnPredaj_Click"/>
+        <Label Content="Zahtjev za kredit" HorizontalAlignment="Left" Margin="76,50,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontSize="30" Foreground="White" FontWeight="Bold"/>
+        <TextBox x:Name="txtVrsta" HorizontalAlignment="Left" Margin="122,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="25" FontFamily="Microsoft YaHei"/>
+        <Label Content="Vrsta kredita:" HorizontalAlignment="Left" Margin="120,165,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" Foreground="White" FontWeight="Bold" FontSize="18"/>
+        <Label Content="Glavnica:" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" Foreground="White" FontWeight="Bold" FontSize="18" Margin="117,254,0,0"/>
+        <TextBox x:Name="txtGlavnica" HorizontalAlignment="Left" Margin="122,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="26" FontFamily="Microsoft YaHei UI"/>
+        <Button x:Name="btnPredaj"  Style="{StaticResource btnStillizacija1}" Content="Pošalji " HorizontalAlignment="Left" Margin="155,440,0,0" VerticalAlignment="Top" Height="32" Width="104" FontFamily="Microsoft YaHei UI" FontSize="18" Click="btnPredaj_Click"/>
+        <Label Content="Broj obroka:" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" Foreground="White" FontWeight="Bold" FontSize="18" Margin="122,342,0,0"/>
+        <TextBox x:Name="txtObrok" HorizontalAlignment="Left" Margin="122,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="22"/>
 
     </Grid>
 </Window>

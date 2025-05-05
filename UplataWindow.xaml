@@ -10,8 +10,8 @@
         <Label x:Name="lblKredit" Content="Plaćanje za kredit #" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" FontWeight="Bold" FontSize="27" Foreground="White"/>
         <TextBox x:Name="txtIznos" HorizontalAlignment="Center" Margin="0,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Količina (€)" HorizontalAlignment="Center" Margin="0,119,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" Foreground="White" FontSize="14"/>
-        <DatePicker x:Name="datePickerDatum" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" Width="150" />
         <Button x:Name="btnPotvrda" Content="Potvrdi plaćanje" Style="{StaticResource btnStillizacija1}" HorizontalAlignment="Center" Margin="0,274,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" Height="27" Width="120" FontWeight="Bold" Click="btnPotvrda_Click"/>
+        <Label x:Name="lblDatum" Content="Plaćanje se tereti na današnji datum (" HorizontalAlignment="Center" Margin="0,192,0,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI" Foreground="White" FontSize="14"/>
 
     </Grid>
 </Window>
